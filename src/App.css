@@ -1,4 +1,52 @@
-.App {
-  text-align: center;
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background: linear-gradient(to right,#00aaff,#00FF6c);
 }
 
+.calculator_grid{
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4,6rem);
+  grid-template-rows: minmax(7rem,auto) repeat(5,4rem);
+  justify-content: center;
+}
+
+.calculator_grid>button{
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  background-color: rgba(255,255,255,.75);
+}
+
+.calculator_grid>button:hover,
+.calculator_grid>button:focus{
+background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1/-1;
+  background-color: rgba(0,0,0,.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous_operand{
+  color: rgba(255,255,255,.75);
+  font-size: 1.5rem; 
+}
+.output .current_operand{
+  color: white;
+  font-size: 2.5rem;
+}
